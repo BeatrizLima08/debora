@@ -1,0 +1,144 @@
+/* BLOCO */
+.bloco {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* CARD FULLSCREEN */
+.card-full {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 31, 68, 0.85);
+  border: 2px solid #c9a227;
+}
+
+/* IMAGEM */
+.card-imagem {
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.card-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTEÚDO */
+.card-conteudo {
+  padding: 30px;
+  color: #ffffff;
+}
+
+.card-conteudo h2 {
+  color: #c9a227;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.card-conteudo p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* BOTÃO CTA */
+.btn-cta {
+  position: absolute;
+  z-index: 10;
+  border: 3px solid #c9a227;
+  color: #c9a227;
+  background: transparent;
+
+  padding: 1.1vw 2.8vw;
+  font-size: 1.05vw;
+
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background: #c9a227;
+  color: #0a1f44;
+}
+
+/* LIMITES DE ESCALA */
+@media (min-width: 1400px) {
+  .btn-cta {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+  }
+}
+
+/* POSIÇÕES (INALTERADAS) */
+.card-botao-direita .btn-cta {
+  bottom: 50%;
+  right: 25%;
+}
+
+.card-botao-centro .btn-cta {
+  bottom: 10%;
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.card-botao-esquerda .btn-cta {
+  bottom: 12%;
+  left: 12%;
+}
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* 🔴 ESCONDE TODOS OS BOTÕES */
+  .btn-cta {
+    display: none;
+  }
+
+  /* ✅ MOSTRA APENAS O ÚLTIMO BOTÃO */
+  .card-botao-esquerda .btn-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .card-full {
+    min-height: auto;
+  }
+
+  .card-imagem {
+    height: 45vh;
+  }
+
+  /* BARRA MOBILE */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: #0a1f44;
+    border-top: 2px solid #c9a227;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+
+  .mobile-nav a {
+    background: #c9a227;
+    color: #0a1f44;
+    padding: 12px 30px;
+    border-radius: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}
